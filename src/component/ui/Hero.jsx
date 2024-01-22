@@ -1,7 +1,33 @@
-import { BsSearch } from 'react-icons/bs'
+import { BsSearch, BsPersonCircle, BsController } from 'react-icons/bs'
 
 const Hero = () =>
 {
+
+  const dataCategory = [
+    {
+      icon: <BsPersonCircle className='p-1 bg-gradient-to-r from-blue-500 to-sky-500 rounded-full' size={30} />,
+      text: 'akun'
+    },
+    {
+      icon: <BsController className='p-1 bg-gradient-to-r from-blue-500 to-sky-500 rounded-full' size={30} />,
+      text: 'joki akun'
+    }
+  ]
+  
+  const ComponentCategory = () =>
+  {
+    return dataCategory.map(data => {
+      return (
+        <div className='flex gap-2 items-center text-white w-full h-16 p-3 bg-slate-800/50 rounded-xl'>
+          <div className='p-1 bg-transparent ring-1 rounded-full'>
+            { data.icon }
+          </div>
+          <p className='text-sm capitalize'>{ data.text }</p>
+        </div>
+      )
+    })
+  }
+
   return (
     <div className="relative w-full h-52 bg-blue-500 bg-center bg-[url('../../../public/images/hero.jpg')]">
       <div className="relative w-full h-52 bg-gradient-to-t from-slate-900">
@@ -11,9 +37,15 @@ const Hero = () =>
         </div>
         <div className="sm:container md:container flex absolute left-2/4 bottom-[-25px] min-w-80 transform translate-x-[-50%]">
           <input className="text-white w-full h-14 pl-5 pr-16 outline-none hover:ring-1 hover:ring-sky-500 bg-slate-800 rounded-full" type="text" placeholder="Telusuri akun yang anda impikan..." autoComplete="off" autoFocus/>
-          <div className="absolute top-1.5 right-2 flex items-center justify-center text-white size-11 bg-sky-500 bg-gradient-to-r from-blue-500 to-sky-500 rounded-full hover:ring-1 ring-sky-800/80"><BsSearch size={25}/></div>
+          <div className="absolute top-1.5 right-2 flex items-center justify-center text-white size-11 bg-gradient-to-r from-blue-500 to-sky-500 rounded-full hover:ring-1 ring-sky-800/80"><BsSearch size={25}/></div>
         </div>
       </div>
+
+      {/*  category  */}
+      <div className='flex gap-5 items-center justify-center my-16 px-5'>
+        <ComponentCategory/>
+      </div>
+      {/* ========= */}
     </div>
   )
 }
