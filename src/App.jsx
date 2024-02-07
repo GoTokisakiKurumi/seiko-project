@@ -1,13 +1,14 @@
-import Header from "./component/ui/Header"
-import Hero from "./component/ui/Hero"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 const App = () =>
 {
   return (
-    <main className="">
-      <Header />
-      <Hero />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
