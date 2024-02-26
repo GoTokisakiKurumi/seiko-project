@@ -5,7 +5,7 @@ import NavbarBottom from '../component/ui/NavbarBottom'
 const Home = () =>
 {
   return (
-    <main className="">
+    <main>
       <Header />
       <Hero />
       <NavbarBottom />
